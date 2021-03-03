@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from cli_app import App
 from commands.manage import Manage
 from commands.config import Config
