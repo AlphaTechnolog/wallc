@@ -52,7 +52,7 @@ class Manage(Command):
             )
 
         success(
-            'Restores the wallpaper',
+            'Restored the wallpaper',
             wallpaper,
             'successfully!'
         )
