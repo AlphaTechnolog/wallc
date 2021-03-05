@@ -8,7 +8,7 @@ class Consts:
     def __init__(self):
         self.new_const(
             'config_path',
-            path('~/.pytrogen.conf.json'),
+            path('~/.wallc.conf.json'),
             self._conf_path_cb
         )
 

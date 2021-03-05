@@ -4,7 +4,7 @@ from util.consts import Consts
 from util.messages import success
 
 class Config(Command):
-    """Manage the pytrogen config."""
+    """Manage the wallc config."""
 
     config_path = Consts().get('config_path')
 

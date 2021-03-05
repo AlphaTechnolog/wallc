@@ -24,7 +24,7 @@ class Set(Command):
             error(
                 'Invalid config rules!',
                 'Please before config the wallpaper_path!, use:',
-                '$ pytrogen config -wp <WALLPAPER_PATH>'
+                '$ wallc config -wp <WALLPAPER_PATH>'
             )
 
     def _set__wallpaper__in_config(self):

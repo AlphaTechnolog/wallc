@@ -28,7 +28,7 @@ class Manage(Command):
             error(
                 'Invalid config rules!',
                 'Please before set a wallpaper with order:',
-                '$ pytrogen set -w <WALLPAPER_NAME> -e <WALLPAPER_EXTENSION>'
+                '$ wallc set -w <WALLPAPER_NAME> -e <WALLPAPER_EXTENSION>'
             )
 
     def _manage__restore__load__wallpaper(self):
@@ -45,10 +45,10 @@ class Manage(Command):
                 'Invalid wallpaper url!',
                 f'The wallpaper url: {wallpaper}',
                 'is invalid, please update it manually',
-                'editing the file ~/.pytrogen.conf.json',
+                'editing the file ~/.wallc.conf.json',
                 'or use instead:',
-                '$ pytrogen config -wp <WALLPAPER_PATH>',
-                '$ pytrogen set -w <WALLPAPER_NAME> -e <WALLPAPER_EXTENSION>'
+                '$ wallc config -wp <WALLPAPER_PATH>',
+                '$ wallc set -w <WALLPAPER_NAME> -e <WALLPAPER_EXTENSION>'
             )
 
         success(
