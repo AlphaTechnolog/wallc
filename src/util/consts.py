@@ -9,10 +9,12 @@ class Consts:
         self.new_const(
             'config_path',
             path('~/.wallc.conf.json'),
-            self._conf_path_cb
+            self._cb__conf_path_cb
         )
 
-    def _conf_path_cb(self, varname, config_path):
+        self.new_const('marketplace', 'http://localhost:8080/api')
+
+    def _cb__conf_path_cb(self, varname, config_path):
         if not isfile(config_path):
             open(config_path, 'x')
             with open(config_path, 'w') as raw_config:

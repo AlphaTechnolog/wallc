@@ -19,3 +19,20 @@ class ConfigChecker:
                 return False
 
         return True
+
+class ConfigGetter:
+    def __init__(self, config_path):
+        self._config_path = config_path
+
+    def _get__raw_config(self):
+        with open(self._config_path, 'r') as raw_config:
+            return raw_config
+
+    def _get__processed_config(self):
+        with open(self._config_path, 'r') as raw_config:
+            config = json.load(raw_config)
+
+        return config
+
+    def prconfig(self):
+        return self._get__processed_config()

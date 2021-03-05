@@ -3,6 +3,8 @@
 from cli_app import App
 from commands.manage import Manage
 from commands.config import Config
+from commands.show import Show
+from commands.rm import Rm
 from commands.set import Set
 
 class Wallc(App):
@@ -12,6 +14,8 @@ class Wallc(App):
         self.add_command('manage', Manage)
         self.add_command('config', Config)
         self.add_command('set', Set)
+        self.add_command('show', Show)
+        self.add_command('rm', Rm)
 
 if __name__ == '__main__':
     app = Wallc()

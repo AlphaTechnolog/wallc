@@ -35,4 +35,25 @@ fi
 
 sudo ln -s /opt/wllc/src/main.py $HOME/.local/bin/wllc
 
+echo "[INFO]: Installing requirements (requirements.txt)"
+
+cd /opt/wallc
+
+if python3 > /dev/null 2>&1; then
+    python3 -m pip install -r requirements.txt > /dev/null 2>&1
+else
+    python -m pip install -r requirements.txt > /dev/null 2>&1
+fi
+
+cd $(dirname $0)
+
+if ! [[ $? == 1 ]]; then
+    echo "[SUCCESS]: Installed the requirements"
+else
+    echo "[FATAL]: Unknown error at install the requirements"
+    echo "[PSOLUTION]: Install python as 'python3' on your \$PATH"
+    echo "  > And in it, install pip"
+    exit 1
+fi
+
 echo "Pytrogen is now installed!"
