@@ -6,7 +6,7 @@ cd $HOME/repo
 echo "Cloning wallc..."
 
 if [ -d $HOME/repo/wallc ]; then
-    echo "Pytrogen already cloned... stoping"
+    echo "Wallc already cloned... stoping"
     echo "[SOLUTION]: Remove the folder $HOME/repo/wallc"
     exit 1
 fi
@@ -16,7 +16,7 @@ cd $HOME/repo/wallc
 echo "Installing wallc in /opt/wallc"
 
 if [ -d /opt/wallc ]; then
-    echo "Pytrogen already installed in /opt/wallc... stoping"
+    echo "Wallc already installed in /opt/wallc... stoping"
     echo "[SOLUTION]: Remove the folder /opt/wallc"
     exit 1
 fi
@@ -27,7 +27,7 @@ sudo cp -r ./* /opt/wallc
 echo "Creating the symlink..."
 
 if [ -f $HOME/.local/bin/wallc ]; then
-    echo "Pytrogen already installed... stoping"
+    echo "Wallc already installed... stoping"
     echo "[SOLUTION]: Remove the file $HOME/.local/bin/wallc and exec:"
     echo "  >> $ sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc"
     exit 1
@@ -56,4 +56,4 @@ else
     exit 1
 fi
 
-echo "Pytrogen is now installed!"
+echo "Wallc is now installed!"
