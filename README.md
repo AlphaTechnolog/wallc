@@ -19,7 +19,7 @@ sudo rm -rf /opt/wallc ~/.local/bin/wallc ~/repo/wallc
 Execute wallc using the next commands sequence:
 
 ```sh
-wallc config --wallpaper-path ~/Images # -> Indicate the url of wallpapers folder
+wallc config --wallpaper-path ~/Images --download-path ~/Downloads # -> Indicate the url of wallpapers folder, and the download folder
 wallc set -w <WALLPAPER_NAME> -e <WALLPAPER_EXTENSION, jpg, png...> # -> Indicate the name and extension of wallpaper, extension default is: jpg
 wallc manage --restore # -> Restore the wallpaper
 ```
