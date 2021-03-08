@@ -23,13 +23,13 @@ echo "[SUCCESS]: Created the symlink..."
 
 echo "[INFO]: Installing requirements (requirements.txt)"
 
-cd /opt/wallc
+# cd /opt/wallc
 
-if python3 > /dev/null 2>&1; then
-    python3 -m pip install -r requirements.txt > /dev/null 2>&1
-else
-    python -m pip install -r requirements.txt > /dev/null 2>&1
-fi
+# if python3 > /dev/null 2>&1; then
+#     python3 -m pip install -r requirements.txt > /dev/null 2>&1
+# else
+#     python -m pip install -r requirements.txt > /dev/null 2>&1
+# fi
 
 cd $(dirname $0)
 

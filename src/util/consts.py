@@ -12,7 +12,10 @@ class Consts:
             self._cb__conf_path_cb
         )
 
-        self.new_const('marketplace', 'http://localhost:8080/api')
+        self.new_const('marketplace', 'http://localhost:8080/api', self._pass_func)
+
+    def _pass_func(self, varname, config_path):
+        pass
 
     def _cb__conf_path_cb(self, varname, config_path):
         if not isfile(config_path):
