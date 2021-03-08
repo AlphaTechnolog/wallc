@@ -37,7 +37,7 @@ sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc
 
 echo "[INFO]: Installing requirements (requirements.txt)"
 
-python3 -m pip install -r /opt/wallc/requirements.txt > /dev/null 2>&1
+python3 -m pip install -r /opt/wallc/requirements.txt
 
 if ! [[ $? == 1 ]]; then
     echo "[SUCCESS]: Installed the requirements"
