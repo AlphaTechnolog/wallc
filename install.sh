@@ -34,18 +34,4 @@ if [ -f $HOME/.local/bin/wallc ]; then
 fi
 
 sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc
-
-echo "[INFO]: Installing requirements (requirements.txt)"
-
-python3 -m pip install -r /opt/wallc/requirements.txt
-
-if ! [[ $? == 1 ]]; then
-    echo "[SUCCESS]: Installed the requirements"
-else
-    echo "[FATAL]: Unknown error at install the requirements"
-    echo "[PSOLUTION]: Install python as 'python3' on your \$PATH"
-    echo "  > And in it, install pip"
-    exit 1
-fi
-
 echo "Wallc is now installed!"
