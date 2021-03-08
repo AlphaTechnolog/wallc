@@ -34,4 +34,21 @@ if [ -f $HOME/.local/bin/wallc ]; then
 fi
 
 sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc
+
+echo "Installing requirements"
+
+python3 -m pip install -r /opt/wallc/requirements.txt > /dev/null 2>&1
+
+if [[ $? == 0 ]]; then
+    echo "Installed the requirements"
+else
+    echo "Could'nt install requirements!"
+    echo "If you want have the python libs: requests, cli-app, colorama all is good!"
+    echo "else see the solution:"
+    echo "[SOLUTION]: run:"
+    echo "  > $ cd $HOME/repo/wallc/"
+    echo "  > $ python3 -m pip install -r requirements.txt"
+    exit 1
+fi
+
 echo "Wallc is now installed!"
