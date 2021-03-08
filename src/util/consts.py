@@ -31,3 +31,5 @@ class Consts:
 
     def get(self, name):
         return self.consts[name]
+
+consts = Consts()

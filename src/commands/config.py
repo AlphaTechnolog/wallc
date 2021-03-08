@@ -18,18 +18,31 @@ class Config(Command):
             help='The wallpapers path'
         )
 
-    def _process__wallpaper_path(self):
-        if not self.app.args.wallpaper_path.endswith('/'):
-            return self.app.args.wallpaper_path + '/'
+        parser.add_argument(
+            '-dp',
+            '--download-path',
+            required=False,
+            type=str,
+            help='The download wallpapers path'
+        )
+
+    def _process__path(self, path):
+        if not path.endswith('/'):
+            return path + '/'
         else:
-            return self.app.args.wallpaper_path
+            return path
 
     def config__wallpaper_path(self):
         with open(self.config_path) as raw_config:
             existent_config = json.load(raw_config)
 
-        self.app.args.wallpaper_path = self._process__wallpaper_path()
-        existent_config['wallpaper_path'] = self.app.args.wallpaper_path
+        self.app.args.wallpaper_path = self._process__path(
+            self.app.args.wallpaper_path
+        )
+        
+        existent_config['wallpaper_path'] = (
+            self.app.args.wallpaper_path
+        )
 
         with open(self.config_path, 'w') as raw_config:
             json.dump(existent_config, raw_config)
@@ -40,6 +53,30 @@ class Config(Command):
             self.app.args.wallpaper_path
         )
 
+    def config__download_path(self):
+        with open(self.config_path) as raw_config:
+            existent_config = json.load(raw_config)
+
+        self.app.args.download_path = self._process__path(
+            self.app.args.download_path
+        )
+
+        existent_config['download_path'] = (
+            self.app.args.download_path
+        )
+
+        with open(self.config_path, 'w') as raw_config:
+            json.dump(existent_config, raw_config)
+
+        success(
+            'Configuration reloaded!',
+            'The download path was updated to',
+            self.app.args.download_path
+        )
+
     def run(self):
         if self.app.args.wallpaper_path:
             self.config__wallpaper_path()
+
+        if self.app.args.download_path:
+            self.config__download_path()

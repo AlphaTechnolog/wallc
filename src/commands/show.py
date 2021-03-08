@@ -52,7 +52,12 @@ class Show(Command):
             config = json.load(raw_config)
 
         wallpapers_path = config['wallpaper_path']
-        self.wallpaper = config['wallpaper']
+
+        if not 'wallpaper' in config:
+            self.wallpaper = ''
+        else:
+            self.wallpaper = config['wallpaper']
+
         self.wallpapers_path = wallpapers_path
         wallpapers_list = dict()
 
@@ -61,7 +66,8 @@ class Show(Command):
                 arname = archive.name.split('.')[0]
                 arext = archive.name.split('.')[1]
                 if (arext == 'png' or
-                        arext == 'jpg'):
+                        arext == 'jpg' or
+                        arext == 'jpeg'):
                     wallpapers_list[arname] = arext
 
         return wallpapers_list
