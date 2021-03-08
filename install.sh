@@ -3,37 +3,37 @@
 cd $HOME
 mkdir -p $HOME/repo
 cd $HOME/repo
-echo "Cloning wllc..."
+echo "Cloning wallc..."
 
-if [ -d $HOME/repo/wllc ]; then
+if [ -d $HOME/repo/wallc ]; then
     echo "Pytrogen already cloned... stoping"
-    echo "[SOLUTION]: Remove the folder $HOME/repo/wllc"
+    echo "[SOLUTION]: Remove the folder $HOME/repo/wallc"
     exit 1
 fi
 
-git clone https://github.com/AlphaTechnolog/wllc.git wllc > /dev/null 2>&1
-cd $HOME/repo/wllc
-echo "Installing wllc in /opt/wllc"
+git clone https://github.com/AlphaTechnolog/wallc.git wallc > /dev/null 2>&1
+cd $HOME/repo/wallc
+echo "Installing wallc in /opt/wallc"
 
-if [ -d /opt/wllc ]; then
-    echo "Pytrogen already installed in /opt/wllc... stoping"
-    echo "[SOLUTION]: Remove the folder /opt/wllc"
+if [ -d /opt/wallc ]; then
+    echo "Pytrogen already installed in /opt/wallc... stoping"
+    echo "[SOLUTION]: Remove the folder /opt/wallc"
     exit 1
 fi
 
-sudo mkdir /opt/wllc
-sudo cp -r ./* /opt/wllc
+sudo mkdir /opt/wallc
+sudo cp -r ./* /opt/wallc
 
 echo "Creating the symlink..."
 
-if [ -f $HOME/.local/bin/wllc ]; then
+if [ -f $HOME/.local/bin/wallc ]; then
     echo "Pytrogen already installed... stoping"
-    echo "[SOLUTION]: Remove the file $HOME/.local/bin/wllc and exec:"
-    echo "  >> $ sudo ln -s /opt/wllc/src/main.py $HOME/.local/bin/wllc"
+    echo "[SOLUTION]: Remove the file $HOME/.local/bin/wallc and exec:"
+    echo "  >> $ sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc"
     exit 1
 fi
 
-sudo ln -s /opt/wllc/src/main.py $HOME/.local/bin/wllc
+sudo ln -s /opt/wallc/src/main.py $HOME/.local/bin/wallc
 
 echo "[INFO]: Installing requirements (requirements.txt)"
 
