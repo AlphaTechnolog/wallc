@@ -4,14 +4,6 @@ from util.consts import Consts
 from util.messages import success
 
 
-class Greeter:
-    def __init__(self: Callable, name: str) -> Callable:
-        self.name = name
-
-    def greet(self: Callable):
-        print(f'Hello {name}')
-
-
 class Config(Command):
     """Manage the wallc config."""
 
