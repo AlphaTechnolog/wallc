@@ -2,6 +2,10 @@
 
 A full cli program to manage your wallpaper, i'm creating a marketplace for this project.
 
+# Deprecated
+
+See also: [wl](https://github.com/AlphaTechnolog/wl)
+
 ## Installing
 
 ```sh

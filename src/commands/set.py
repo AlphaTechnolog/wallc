@@ -7,14 +7,25 @@ from util.messages import success, error
 from util.config import ConfigChecker
 
 class Set(Command):
-    """Set config."""
+    """Set a wallpaper using the specified command."""
 
     config_path = Consts().get('config_path')
 
     @staticmethod
     def register_arguments(parser):
         parser.add_argument('-w', '--wallpaper', required=True, help='Wallpaper name.')
-        parser.add_argument('-e', '--extension', required=False, help='Wallpaper extension.',
+
+        parser.add_argument(
+            '-p',
+            '--program',
+            required=False,
+            default='feh --bg-scale',
+            help='The wallpaper program to use (default: feh)'
+        )
+
+        parser.add_argument(
+            '-e',
+            '--extension', required=False, help='Wallpaper extension.',
                             default='jpg')
 
     def _check__config_keys(self):
@@ -50,7 +61,7 @@ class Set(Command):
 
         if isfile(wall_url):
             subprocess.run(
-                [f'feh --bg-scale {wall_url}'],
+                [f'{self.app.args.program} {wall_url}'],
                 shell=True,
                 stdout=subprocess.PIPE
             )

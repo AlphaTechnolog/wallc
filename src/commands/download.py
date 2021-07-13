@@ -29,7 +29,7 @@ class Download(Command):
         )):
             error(
                 'This action is unavailable',
-                'to unlock it config the',
+                'to unlock it, config the',
                 'download_path && wallpaper_path rules',
                 'use:',
                 '$ wallc config -wp WALL_PATH -dp DOWNLOAD_PATH'
